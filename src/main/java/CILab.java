@@ -13,8 +13,15 @@ public class CILab implements CILabInterface {
 
     @Override
     public boolean detectCapitalUse() {
+        if(myString.isEmpty()) {
+            return false;
+        }
+        for (char c : myString.toCharArray()) {
+            if (Character.isUpperCase(c)) {
+                return true;
+            }
+        }
         return false;
     }
-
 }
 
