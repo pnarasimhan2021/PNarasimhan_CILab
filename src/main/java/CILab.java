@@ -1,3 +1,5 @@
+import javax.lang.model.type.NullType;
+
 public class CILab implements CILabInterface {
     private String myString;
 
@@ -13,6 +15,9 @@ public class CILab implements CILabInterface {
 
     @Override
     public boolean detectCapitalUse() {
+        if(myString == null) {
+            return false;
+        }
         if(myString.isEmpty()) {
             return false;
         }
